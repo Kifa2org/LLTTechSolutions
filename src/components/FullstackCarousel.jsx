@@ -1,27 +1,25 @@
 import React, { useState, useEffect, useRef } from 'react';
-import FireWall from "../assets/firewall.jpg";
-import Switching from "../assets/switching.jpg";
-import Vulnerbility from "../assets/Vulnerbility.jpg";
+import FullStackimg from "../assets/FullStackimg.jpg";
 
 const slides = [
   {
-    title: 'Firewall Configuration & Management',
-    description: 'Advanced policy design, rule optimization, and zero-trust enforcement across leading firewall platforms.',
-    imageUrl: FireWall,
+    title: 'Robust Web Applications',
+    description: 'Build scalable and efficient web applications tailored to your business needs.',
+    imageUrl: FullStackimg,
   },
   {
-    title: 'Switching & Routing Security',
-    description: 'Secure network segmentation and resilient routing practices to ensure data integrity and high availability.',
-    imageUrl: Switching,
+    title: 'End-to-End Development',
+    description: 'Comprehensive fullstack solutions from frontend to backend and database management.',
+    imageUrl: FullStackimg,
   },
   {
-    title: 'Vulnerability Assessment & Penetration Testing (VAPT)',
-    description: 'Rigorous security evaluations to uncover and mitigate hidden weaknesses in your environment.',
-    imageUrl: Vulnerbility,
+    title: 'Modern Technologies',
+    description: 'Utilize the latest frameworks and tools to deliver high-quality software products.',
+    imageUrl: FullStackimg,
   },
 ];
 
-const NewCarousel = () => {
+const FullstackCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitionEnabled, setIsTransitionEnabled] = useState(true);
   const prevIndexRef = useRef(currentIndex);
@@ -40,7 +38,6 @@ const NewCarousel = () => {
 
   useEffect(() => {
     if (prevIndexRef.current === slides.length - 1 && currentIndex === 0) {
-      // Disable transition for the jump from last to first slide
       setIsTransitionEnabled(false);
     } else {
       setIsTransitionEnabled(true);
@@ -51,13 +48,13 @@ const NewCarousel = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
-    }, 4000); // Change slide every 4 seconds
+    }, 4000);
 
-    return () => clearInterval(interval); // Cleanup on unmount
+    return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="relative w-full  mx-auto overflow-hidden  shadow-lg">
+    <div className="relative w-full mx-auto overflow-hidden shadow-lg bg-gradient-to-r from-green-700 via-green-400 to-green-800 text-white">
       <div
         className={`flex duration-700 ${isTransitionEnabled ? 'transition-transform' : ''}`}
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -109,4 +106,4 @@ const NewCarousel = () => {
   );
 };
 
-export default NewCarousel;
+export default FullstackCarousel;

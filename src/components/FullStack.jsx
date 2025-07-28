@@ -1,10 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import ServicesImg from './assets/switching.jpg';
+import FullStackimg from "../assets/FullStackimg.jpg";
 
-const Services = () => {
+const FullStack = () => {
   return (
-    <section className="relative mb-3 bg-gradient-to-r from-blue-700 via-blue-500 to-indigo-800 text-white min-h-screen flex items-center">
+    <section className="relative  bg-gradient-to-r from-green-700 via-green-400 to-green-800 text-white">
       <div className="container mx-auto px-6 py-24 flex flex-col md:flex-row items-center">
         <div className="md:w-1/2 text-center md:text-left">
           <motion.h1
@@ -13,7 +13,7 @@ const Services = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
-            Comprehensive IT Services
+            Fullstack Development Services
           </motion.h1>
           <motion.p
             className="text-lg mb-8 max-w-lg mx-auto md:mx-0"
@@ -21,14 +21,22 @@ const Services = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 1 }}
           >
-            Delivering reliable and scalable IT services to support your business growth.
+            Build robust, scalable, and efficient web applications with our expert fullstack development team.
           </motion.p>
           <div className="space-x-4">
             <motion.button
-              className="bg-white text-blue-700 font-semibold py-3 px-6 rounded-lg shadow-lg transition duration-300 hover:bg-gray-100"
+              className="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition duration-300"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.2, duration: 1 }}
+            >
+              Get Started
+            </motion.button>
+            <motion.button
+              className="bg-transparent border border-white hover:bg-white hover:text-blue-900 text-white font-semibold py-3 px-6 rounded-lg transition duration-300"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.4, duration: 1 }}
             >
               Learn More
             </motion.button>
@@ -36,8 +44,8 @@ const Services = () => {
         </div>
         <div className="md:w-1/2 mt-12 md:mt-0">
           <motion.img
-            src={ServicesImg}
-            alt="IT Services"
+            src={FullStackimg}
+            alt="Fullstack Development"
             className="rounded-lg shadow-lg max-w-full h-auto mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -49,4 +57,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default FullStack;

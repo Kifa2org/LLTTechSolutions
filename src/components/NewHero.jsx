@@ -5,7 +5,7 @@ import MinBg from "../assets/mainpageImg.jpg";
 
 const NewHero = () => {
   return (
-    <section className="relative bg-gradient-to-r from-green-700 via-green-400 to-green-800 text-white">
+    <section className="relative mb-3 bg-gradient-to-r from-green-700 via-green-400 to-green-800 text-white">
       <div className="container mx-auto px-6 py-24 flex flex-col md:flex-row items-center">
         <div className="md:w-1/2 text-center md:text-left">
           <motion.h1

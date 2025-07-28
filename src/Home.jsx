@@ -1,14 +1,27 @@
 import React from 'react';
-import NewHero from './components/NewHero';
+import Hero from './components/Hero';
+import FullStack from './components/FullStack';
+import DigitalMarket from './components/DigitalMarket';
+import StyleCards from './components/StyleCards';
 import NewCarousel from './components/NewCarousel';
-import NewServices from './components/NewServices';
+import DigitalMarketingCarousel from './components/DigitalMarketingCarousel';
+import FullstackCarousel from './components/FullstackCarousel';
+import GlobalStatsSection from './components/GlobalStatsSection';
+
 
 const Home = () => {
   return (
-    <div>
-      <NewHero />
-       <NewCarousel />
-      <NewServices />
+    <div className="bg-gray-900 text-white min-h-screen">
+      <Hero />
+      <StyleCards />
+      <NewCarousel />
+      <DigitalMarket />
+      <DigitalMarketingCarousel />
+      <FullStack />
+      <FullstackCarousel />
+      <GlobalStatsSection />
+
+
     </div>
   );
 };

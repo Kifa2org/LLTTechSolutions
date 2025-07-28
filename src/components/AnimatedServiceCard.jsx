@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const AnimatedServiceCard = ({ title, description, icon: Icon }) => {
   return (
     <motion.div
-      className="bg-white rounded-lg shadow p-6"
+      className="bg-white text-gray-800 rounded-lg shadow p-6"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
