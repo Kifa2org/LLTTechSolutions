@@ -1,10 +1,14 @@
 import React from 'react';
-
+import LLTlogo from "../assets/Logo-LLTW.png"
+import { GrShieldSecurity } from "react-icons/gr";
+import { FaCode } from "react-icons/fa";
+import { AiFillShop } from "react-icons/ai";
 const Navigation = () => {
   return (
     <nav className="bg-gray-900 text-white shadow-md fixed w-full z-50">
       <div className="container mx-auto px-6 py-5 flex items-center justify-between">
-        <div className="text-2xl font-bold text-white-600 cursor-pointer">
+        <div className="text-2xl font-bold flex text-white-600 cursor-pointer">
+        <img src={LLTlogo} alt="LLT" className='rounded-md me-2' srcset="" style={{height:"2rem",width:"2rem"}} />
           LLTTech Solutions
         </div>
         <ul className="hidden md:flex space-x-8 font-semibold">
@@ -21,9 +25,9 @@ const Navigation = () => {
               </svg>
             </div>
             <div className="absolute left-0 mt-2 w-48 xl:w-72 bg-white border border-gray-300 rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-50">
-              <span className="block w-full text-left px-4 py-2 text-black hover:bg-gray-200">cybersucurity</span>
-              <span className="block w-full text-left px-4 py-2 text-black hover:bg-gray-200"><a href="/FullStackmain">full stack development </a> </span>
-              <span className="block w-full text-left px-4 py-2 text-black hover:bg-gray-200"><a href="/DigitalMarketing">digitalmarketing</a></span>
+              <span className="block w-full text-left px-4 py-2 text-black hover:bg-gray-200 flex"><GrShieldSecurity className='mt-1 me-1' /><a href="/cybersecurity">  Cybersecurity</a></span>
+              <span className="block w-full text-left px-4 py-2 text-black hover:bg-gray-200 flex"> <FaCode className='mt-1 me-1' /><a href="/FullStackmain">Full Stack Development </a> </span>
+              <span className="block w-full text-left px-4 py-2 text-black hover:bg-gray-200 flex"><AiFillShop className='mt-1 me-1' /> <a href="/DigitalMarketing">Digitalmarketing</a></span>
             </div>
           </li>
           <li className="hover:text-red-600 cursor-pointer"><a href="/solutions">Solutions</a></li>

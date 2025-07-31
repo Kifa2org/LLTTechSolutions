@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import FullStack from './components/FullStack';
 import FullstackCarousel from './components/FullstackCarousel';
+import CodeTypingDevTool from './components/CodeTypingDevTool';
 
 const videoVariants = {
   hidden: { opacity: 0, y: 30 },
@@ -23,17 +24,7 @@ const FullStackmain = () => {
         <p className="mb-4 text-lg leading-relaxed">
           We build high-performance mobile applications for both iOS and Android platforms using the latest technologies and frameworks. Our mobile development services focus on delivering seamless user experiences and robust functionality.
         </p>
-        <motion.video
-          className="w-full rounded-lg shadow-lg mb-8"
-          src="/videos/mobile-development-animation.mp4"
-          autoPlay
-          loop
-          muted
-          variants={videoVariants}
-          initial="hidden"
-          animate="visible"
-          playsInline
-        />
+        <CodeTypingDevTool type="flutter" />
         <ul className="list-disc list-inside mb-8 text-lg">
           <li>Cross-platform app development</li>
           <li>Native app development</li>
@@ -42,21 +33,11 @@ const FullStackmain = () => {
           <li>App store deployment and support</li>
         </ul>
 
-        <h3 className="text-3xl font-semibold mb-6">App Development</h3>
+        <h3 className="text-3xl font-semibold mb-6">Web App Development</h3>
         <p className="mb-4 text-lg leading-relaxed">
           Our app development services cover the full lifecycle from concept to deployment. We create scalable and secure applications tailored to your business needs, including backend APIs, frontend interfaces, and integration with third-party services.
         </p>
-        <motion.video
-          className="w-full rounded-lg shadow-lg mb-8"
-          src="/videos/app-development-animation.mp4"
-          autoPlay
-          loop
-          muted
-          variants={videoVariants}
-          initial="hidden"
-          animate="visible"
-          playsInline
-        />
+        <CodeTypingDevTool type="react" />
         <ul className="list-disc list-inside mb-8 text-lg">
           <li>Custom app development</li>
           <li>API design and development</li>

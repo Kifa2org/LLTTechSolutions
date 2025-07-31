@@ -9,6 +9,7 @@ import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 import DigitalMarketing from './DigitalMarketing';
 import FullStackmain from './FullStackmain';
+import Cybersecurity from './Cybersecurity';
 
 const  App =() => {
   return (
@@ -21,6 +22,7 @@ const  App =() => {
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
             <Route path="/solutions" element={<Solutions />} />
+            <Route path="/cybersecurity" element={<Cybersecurity />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/DigitalMarketing" element={<DigitalMarketing />} />
             <Route path="/FullStackmain" element={<FullStackmain />} />
