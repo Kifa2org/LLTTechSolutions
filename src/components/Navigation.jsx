@@ -80,7 +80,7 @@ const Navigation = () => {
       {/* Offcanvas panel */}
       <div
         id="course-offcanvas"
-        className={`fixed top-0 right-0 h-full w-64 bg-gray-900 text-white shadow-lg z-50 transform transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 right-0 h-full w-96 bg-gray-900 text-white shadow-lg z-50 transform transition-transform duration-300 ease-in-out ${
           offcanvasOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
         aria-hidden={!offcanvasOpen}
@@ -101,7 +101,7 @@ const Navigation = () => {
               onClick={toggleCyberDropdown}
               className="flex items-center w-full text-left hover:text-red-600 focus:outline-none"
             >
-              <GrShieldSecurity className="me-2" /> Cyber Security
+              <GrShieldSecurity className="me-2" /> Fortinet
               <svg
                 className={`ml-auto w-4 h-4 fill-current transition-transform duration-200 ${
                   cyberDropdownOpen ? 'rotate-180' : ''
@@ -114,9 +114,9 @@ const Navigation = () => {
             </button>
             {cyberDropdownOpen && (
               <div className="ml-4 mt-2 space-y-1">
-                <a href="/FortinetTraining" className="block px-2 py-1 text-sm text-white hover:text-red-600">FortiNet</a>
-                <a href="/cybersecurity#services" className="block px-2 py-1 text-sm text-white hover:text-red-600">Services</a>
-                <a href="/cybersecurity#tools" className="block px-2 py-1 text-sm text-white hover:text-red-600">SIEM Tools</a>
+                <a href="/FortinetTraining" className="block px-2 py-1 text-sm text-white hover:text-red-600">Professional</a>
+                <a href="/cybersecurity#services" className="block px-2 py-1 text-sm text-white hover:text-red-600">Solution Specialist</a>
+                <a href="/cybersecurity#tools" className="block px-2 py-1 text-sm text-white hover:text-red-600">Expert</a>
                 <a href="/cybersecurity#assessment" className="block px-2 py-1 text-sm text-white hover:text-red-600">Vulnerability Assessment</a>
                 <a href="/contact" className="block px-2 py-1 text-sm text-white hover:text-red-600">Contact</a>
               </div>

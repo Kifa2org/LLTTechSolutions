@@ -1,4 +1,4 @@
-import React from 'react';
+import React ,{useRef} from 'react';
 import Hero from './components/Hero';
 import FullStack from './components/FullStack';
 import DigitalMarket from './components/DigitalMarket';
@@ -11,14 +11,22 @@ import CyberCourse from './components/CyberCourse';
 
 
 const Home = () => {
+
+    const courseSectionRef = useRef(null);
+
+  const scrollToCourses = () => {
+    courseSectionRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
+
   return (
     <div className="bg-gray-900 text-white min-h-screen">
-      <Hero />
-      <StyleCards />
-      <NewCarousel />
+      <Hero onScrollDown={scrollToCourses}/>
+      <NewCarousel ref={courseSectionRef}/>
     
+<CyberCourse />
+      <StyleCards />
       <GlobalStatsSection />
-<CyberCourse/>
 
     </div>
   );

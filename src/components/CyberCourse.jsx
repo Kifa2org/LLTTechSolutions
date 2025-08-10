@@ -8,10 +8,11 @@ import { Link } from 'react-router-dom';
 const CyberCourse = () => {
       const cards = [
     {
-      title: "FortiNet Security Solutions",
+      title: "FortiNet Security Training",
       description: "Advanced next-generation firewalls and security fabric integration for comprehensive threat protection.",
       image: FortiNetImg,
-      features: ["NGFW", "Threat Intelligence", "Zero Trust Access"]
+      features: ["NGFW", "Threat Intelligence", "Zero Trust Access"],
+      to:"/FortinetTraining"
     },
     {
       title: "IEM Tools & Management",
@@ -62,14 +63,16 @@ const CyberCourse = () => {
                   </span>
                 ))}
               </div>
-              {/* <Link to=""></Link> */}
+              <Link to={card.to}>
+              
               <motion.button
                 className="mt-4 w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Explore Solution
+                Explore 
               </motion.button>
+              </Link>
             </motion.div>
           ))}
         </div>

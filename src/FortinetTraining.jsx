@@ -6,17 +6,17 @@ import Footer from './components/Footer';
 const FortinetTraining = () => {
   const courseContent = [
     {
-      title: "FortiGate Firewall Fundamentals",
+      title: "Security Operations",
       duration: "8 hours",
       topics: ["Firewall Policies", "NAT Configuration", "VPN Setup", "Traffic Shaping"]
     },
     {
-      title: "FortiManager & FortiAnalyzer",
+      title: "Network Security",
       duration: "6 hours",
       topics: ["Centralized Management", "Logging & Reporting", "Device Registration", "Policy Management"]
     },
     {
-      title: "Advanced Threat Protection",
+      title: "Public Cloud Security",
       duration: "10 hours",
       topics: ["IPS Configuration", "Anti-Virus", "Web Filtering", "Application Control"]
     },
@@ -111,7 +111,8 @@ const FortinetTraining = () => {
       <section className="py-16 bg-gray-100">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">Course Content</h2>
+            <h2 className="text-4xl font-bold text-gray-800 mb-4"> FORTINET CERTIFIED 
+PROFESSIONAL</h2>
             <p className="text-xl text-gray-600">Detailed curriculum designed by industry experts</p>
           </div>
           

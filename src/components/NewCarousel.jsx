@@ -1,27 +1,27 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef,forwardRef } from 'react';
 import FireWall from "../assets/firewall.jpg";
 import Switching from "../assets/switching.jpg";
 import Vulnerbility from "../assets/Vulnerbility.jpg";
 
 const slides = [
   {
-    title: 'Firewall Configuration & Management',
+    title: 'Firewall Configuration & Management Course',
     description: 'Advanced policy design, rule optimization, and zero-trust enforcement across leading firewall platforms.',
     imageUrl: FireWall,
   },
   {
-    title: 'Switching & Routing Security',
+    title: 'Networking Course',
     description: 'Secure network segmentation and resilient routing practices to ensure data integrity and high availability.',
     imageUrl: Switching,
   },
   {
-    title: 'Vulnerability Assessment & Penetration Testing (VAPT)',
+    title: 'Vulnerability Assessment & Penetration Testing (VAPT) Course',
     description: 'Rigorous security evaluations to uncover and mitigate hidden weaknesses in your environment.',
     imageUrl: Vulnerbility,
   },
 ];
 
-const NewCarousel = () => {
+const NewCarousel = forwardRef((props,ref) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitionEnabled, setIsTransitionEnabled] = useState(true);
   const prevIndexRef = useRef(currentIndex);
@@ -57,7 +57,7 @@ const NewCarousel = () => {
   }, []);
 
   return (
-    <div className="relative w-full  mx-auto overflow-hidden  shadow-lg">
+    <div ref={ref} className="relative w-full  mx-auto overflow-hidden  shadow-lg">
       <div
         className={`flex duration-700 ${isTransitionEnabled ? 'transition-transform' : ''}`}
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -107,6 +107,7 @@ const NewCarousel = () => {
       </div>
     </div>
   );
-};
+}
+)
 
 export default NewCarousel;
