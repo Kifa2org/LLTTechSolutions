@@ -10,10 +10,17 @@ import Footer from './components/Footer';
 import DigitalMarketing from './DigitalMarketing';
 import FullStackmain from './FullStackmain';
 import Cybersecurity from './Cybersecurity';
+import ExtremeCloudDashboard from './ExtremeCloudDashboard';
+import InsightsPage from './InsightsPage';
+import FortinetTraining from './FortinetTraining';
 
 const  App =() => {
   return (
     <Router>
+      <Routes >
+        <Route path="/ExtremeCloudDashboard" element={<ExtremeCloudDashboard />} />
+            <Route path="/InsightsPage" element={<InsightsPage />} />
+      </Routes>
       <div className="min-h-screen flex flex-col">
         <Navigation />
         <main className="flex-grow bg-gray-50 pt-20">
@@ -26,6 +33,8 @@ const  App =() => {
             <Route path="/contact" element={<Contact />} />
             <Route path="/DigitalMarketing" element={<DigitalMarketing />} />
             <Route path="/FullStackmain" element={<FullStackmain />} />
+            <Route path="/FortinetTraining" element={<FortinetTraining />} />
+            
           </Routes>
         </main>
         <Footer />

@@ -7,6 +7,7 @@ import NewCarousel from './components/NewCarousel';
 import DigitalMarketingCarousel from './components/DigitalMarketingCarousel';
 import FullstackCarousel from './components/FullstackCarousel';
 import GlobalStatsSection from './components/GlobalStatsSection';
+import CyberCourse from './components/CyberCourse';
 
 
 const Home = () => {
@@ -15,12 +16,9 @@ const Home = () => {
       <Hero />
       <StyleCards />
       <NewCarousel />
-      <DigitalMarket />
-      <DigitalMarketingCarousel />
-      <FullStack />
-      <FullstackCarousel />
+    
       <GlobalStatsSection />
-
+<CyberCourse/>
 
     </div>
   );
