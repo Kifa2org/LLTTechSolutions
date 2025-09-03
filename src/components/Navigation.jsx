@@ -51,7 +51,7 @@ const Navigation = () => {
             <li className="hover:text-red-600 cursor-pointer"><a href="/solutions">Blog</a></li>
             <li className="hover:text-red-600 cursor-pointer"><a href="/about">About</a></li>
             <li className="hover:text-red-600 cursor-pointer"><a href="/contact">Contact</a></li>
-            <li className="hover:text-red-600 cursor-pointer"><a href="/ExtremeCloudDashboard">Cloud</a></li>
+            {/* <li className="hover:text-red-600 cursor-pointer"><a href="/ExtremeCloudDashboard">Cloud</a></li> */}
           </ul>
           <div className="md:hidden">
             {/* Mobile menu icon can be added here later */}
@@ -115,19 +115,21 @@ const Navigation = () => {
             {cyberDropdownOpen && (
               <div className="ml-4 mt-2 space-y-1">
                 <a href="/FortinetTraining" className="block px-2 py-1 text-sm text-white hover:text-red-600">Professional</a>
-                <a href="/cybersecurity#services" className="block px-2 py-1 text-sm text-white hover:text-red-600">Solution Specialist</a>
-                <a href="/cybersecurity#tools" className="block px-2 py-1 text-sm text-white hover:text-red-600">Expert</a>
-                <a href="/cybersecurity#assessment" className="block px-2 py-1 text-sm text-white hover:text-red-600">Vulnerability Assessment</a>
-                <a href="/contact" className="block px-2 py-1 text-sm text-white hover:text-red-600">Contact</a>
+                <a href="/FortinetTraining" className="block px-2 py-1 text-sm text-white hover:text-red-600">Solution Specialist</a>
+                <a href="/FortinetTraining" className="block px-2 py-1 text-sm text-white hover:text-red-600">Expert</a>
+                {/* <a href="/cybersecurity#services" className="block px-2 py-1 text-sm text-white hover:text-red-600">Solution Specialist</a>
+                <a href="/cybersecurity#tools" className="block px-2 py-1 text-sm text-white hover:text-red-600">Expert</a> */}
+                {/* <a href="/cybersecurity#assessment" className="block px-2 py-1 text-sm text-white hover:text-red-600">Vulnerability Assessment</a>
+                <a href="/contact" className="block px-2 py-1 text-sm text-white hover:text-red-600">Contact</a> */}
               </div>
             )}
           </div>
-          <a href="/FullStackmain" className="flex items-center hover:text-red-600">
+          {/* <a href="/FullStackmain" className="flex items-center hover:text-red-600">
             <FaCode className="me-2" /> Full Stack Development
           </a>
           <a href="/DigitalMarketing" className="flex items-center hover:text-red-600">
             <AiFillShop className="me-2" /> Digital Marketing
-          </a>
+          </a> */}
         </nav>
       </div>
     </>

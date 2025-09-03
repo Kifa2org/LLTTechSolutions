@@ -8,6 +8,8 @@ import DigitalMarketingCarousel from './components/DigitalMarketingCarousel';
 import FullstackCarousel from './components/FullstackCarousel';
 import GlobalStatsSection from './components/GlobalStatsSection';
 import CyberCourse from './components/CyberCourse';
+import { Helmet } from 'react-helmet-async';
+
 
 
 const Home = () => {
@@ -19,7 +21,19 @@ const Home = () => {
   };
 
 
-  return (
+  return (<>
+  <Helmet>
+    
+        <meta
+          name="description"
+          content="LLT Tech Solutions provides expert Fortinet training and cybersecurity certification courses. Learn FortiGate firewall, network defense, and security skills."
+        />
+        <meta
+          name="keywords"
+          content="Fortinet Training, Cybersecurity Training, FortiGate Firewall, Network Security, LLT Tech Solutions,FTI,Fortinet training courses,fortinet,fti,LLTtech,"
+        />
+        <link rel="canonical" href="https://llttechsolutions.com/" />
+  </Helmet>
     <div className="bg-gray-900 text-white min-h-screen">
       <Hero onScrollDown={scrollToCourses}/>
       <NewCarousel ref={courseSectionRef}/>
@@ -29,6 +43,7 @@ const Home = () => {
       <GlobalStatsSection />
 
     </div>
+  </>
   );
 };
 

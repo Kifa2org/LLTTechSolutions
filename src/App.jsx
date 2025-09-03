@@ -6,6 +6,7 @@ import Services from './Services';
 import Contact from './Contact';
 import Solutions from './Solutions';
 import Navigation from './components/Navigation';
+import CourseDetails from './components/CourseDetails';
 import Footer from './components/Footer';
 import DigitalMarketing from './DigitalMarketing';
 import FullStackmain from './FullStackmain';
@@ -34,6 +35,7 @@ const  App =() => {
             <Route path="/DigitalMarketing" element={<DigitalMarketing />} />
             <Route path="/FullStackmain" element={<FullStackmain />} />
             <Route path="/FortinetTraining" element={<FortinetTraining />} />
+            <Route path="/CourseDetails/:examCode" element={<CourseDetails />} />
             
           </Routes>
         </main>

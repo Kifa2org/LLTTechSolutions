@@ -35,7 +35,7 @@ import  fortinetFCSSFortiSASE25Administrator  from '../src/data/fortinetFCSSFort
 import  fortinetFCSSPublicCloudSecurity76Architect  from '../src/data/fortinetFCSSPublicCloudSecurity76Architect';
 import  fortinetNSE8NetworkSecurityExpert8  from '../src/data/fortinetNSE8NetworkSecurityExpert8';
 import  fortinetNSE8PracticalExam  from '../src/data/fortinetNSE8PracticalExam';
-import { Helmet } from 'react-helmet-async';
+
 
 
 const FortinetTraining = () => {
@@ -126,21 +126,6 @@ const FortinetTraining = () => {
   ];
 
   return (
-    <>
-
-      <Helmet>
-    
-        <meta
-          name="description"
-          content=" fortinet certified professional ,fortinet solutions specialist, expert Fortinet training and cybersecurity certification courses. Learn FortiGate firewall, network defense, and security skills."
-        />
-        <meta
-          name="keywords"
-          content="fortinet certified professional,fortinet solutions specialist,llttechsolutions, Fortinet courses online, FortiGate Firewall, Network Security, LLT Tech Solutions,FTI,Fortinet training courses,fortinet,fti,LLTtech,"
-        />
-        <link rel="canonical" href="https://llttechsolutions.com/" />
-  </Helmet>
-    
     <div className="min-h-screen bg-gray-50">
  
       
@@ -157,12 +142,10 @@ const FortinetTraining = () => {
                 Learn from industry experts and get certified in FortiGate, FortiManager, and FortiAnalyzer.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                     <Link to="/contact"> 
                 <button className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg font-semibold flex items-center justify-center">
                   <Play className="w-5 h-5 mr-2" />
                   Start Free Demo
                 </button>
-                     </Link>
                 {/* <button className="border-2 border-white hover:bg-white hover:text-blue-900 text-white px-8 py-3 rounded-lg font-semibold">
                   Download Syllabus
                 </button> */}
@@ -222,13 +205,12 @@ PROFESSIONAL</h2>
                 </div>
                 <div className="grid md:grid-cols-2 gap-4">
                   {module.topics.map((topic, topicIndex) => (
-                    <Link key={topicIndex} to={`/CourseDetails/${module.to[topicIndex].examCode}`}>
-                      <div className="flex items-center">
-                        <ChevronRight className="w-5 h-5 text-blue-600 mr-2" />
-                        <span className="text-gray-700">{topic}</span>
-                      </div>
-                    </Link>
-                  ))}
+                    <Link to="/CourseDetails" state={{ examDetails: module.to[topicIndex] }}>
+                    <div key={topicIndex}  className="flex items-center ">
+                      <ChevronRight className="w-5 h-5 text-blue-600 mr-2" />
+                      <span className="text-gray-700">{topic}</span>
+                    </div>
+</Link>                 ))}
                 </div>
               </div>
             ))}
@@ -255,13 +237,13 @@ PROFESSIONAL</h2>
                     {module.duration}
                   </span>
                 </div>
-                <div className="grid gap-4">
+                <div className="grid  gap-4">
                   {module.topics.map((topic, topicIndex) => (
-                    <Link key={topicIndex} to={`/CourseDetails/${module.to[topicIndex].examCode}`}>
-                      <div className="flex items-center">
-                        <ChevronRight className="w-5 h-5 text-blue-600 mr-2" />
-                        <span className="text-gray-700">{topic}</span>
-                      </div>
+                <Link to="/CourseDetails" state={{ examDetails: module.to[topicIndex] }}>
+                    <div key={topicIndex} className="flex items-center ">
+                      <ChevronRight className="w-5 h-5 text-blue-600 mr-2" />
+                      <span className="text-gray-700">{topic}</span>
+                    </div>
                     </Link>
                   ))}
                 </div>
@@ -289,13 +271,13 @@ PROFESSIONAL</h2>
                     {module.duration}
                   </span>
                 </div>
-                <div className="grid gap-4">
+                <div className="grid  gap-4">
                   {module.topics.map((topic, topicIndex) => (
-                    <Link key={topicIndex} to={`/CourseDetails/${module.to[topicIndex].examCode}`}>
-                      <div className="flex items-center">
-                        <ChevronRight className="w-5 h-5 text-blue-600 mr-2" />
-                        <span className="text-gray-700">{topic}</span>
-                      </div>
+                    <Link to="/CourseDetails" state={{ examDetails: module.to[topicIndex] }}>
+                    <div key={topicIndex} className="flex items-center ">
+                      <ChevronRight className="w-5 h-5 text-blue-600 mr-2" />
+                      <span className="text-gray-700">{topic}</span>
+                    </div>
                     </Link>
                   ))}
                 </div>
@@ -336,24 +318,18 @@ PROFESSIONAL</h2>
           <h2 className="text-4xl font-bold mb-4">Ready to Start Your Fortinet Journey?</h2>
           <p className="text-xl mb-8 text-gray-200">Join thousands of professionals who have advanced their careers with our training</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                 <Link to="/contact"> 
-                 
             <button className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg font-semibold text-lg">
               Enroll Now
             </button>
-                 </Link>
-                 <Link to="/contact"> 
             <button className="border-2 border-white hover:bg-white hover:text-blue-900 text-white px-8 py-4 rounded-lg font-semibold text-lg">
               Schedule Demo
             </button>
-                 </Link>
           </div>
         </div>
       </section>
 
    
     </div>
-            </>
   );
 };
 

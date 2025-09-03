@@ -22,10 +22,10 @@ const Footer = () => {
         </div>
         <div>
           <h4 className="font-semibold mb-2">Contact Us</h4>
-          <p className="text-gray-400">1234 Tech Street</p>
-          <p className="text-gray-400">City, State, ZIP</p>
-          <p className="text-gray-400">Email: info@llttech.com</p>
-          <p className="text-gray-400">Phone: (123) 456-7890</p>
+          <p className="text-gray-400">Palakkad Main Road,Sunnambu,Kalavai</p>
+          <p className="text-gray-400">Kuniyamuthur, Coimbatore-641008, Tamil Nadu</p>
+          <p className="text-gray-400 mt-1">Email: contact@llttechsolutions.com</p>
+          <p className="text-gray-400 mt-1">Phone: +91 78458 25295</p>
         </div>
       </div>
       <div className="text-center text-gray-600 mt-6">
