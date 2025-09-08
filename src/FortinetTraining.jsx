@@ -36,6 +36,8 @@ import  fortinetFCSSPublicCloudSecurity76Architect  from '../src/data/fortinetFC
 import  fortinetNSE8NetworkSecurityExpert8  from '../src/data/fortinetNSE8NetworkSecurityExpert8';
 import  fortinetNSE8PracticalExam  from '../src/data/fortinetNSE8PracticalExam';
 import { Helmet } from 'react-helmet-async';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 
 const FortinetTraining = () => {
@@ -61,6 +63,17 @@ const FortinetTraining = () => {
    
   ];
 
+  const location = useLocation();
+
+    useEffect(() => {
+      if (location.hash) {
+        const element = document.querySelector(location.hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }, [location]);
+
   const courseSolution = [
     {
       title: "Fortinet OT Security",
@@ -78,7 +91,7 @@ const FortinetTraining = () => {
       title: "Fortinet Network Security",
       duration: "10 hours",
       topics: ["FCSS - Enterprise Firewall Administrator", "NSE 7 LAN Edge  ","FCSS - LAN Edge Architect", "FCSS - Network Security Support Engineer", "FCSS - SD-WAN Architect"],
-   to: [fortiEnterpriceFirewall,fortinetNSE7LANEdgeExamDetails,fortinetFCSSLANEdge76Architect,fortinetFCSSNetworkSecurity76Support,fortinetFCSSSDWAN76Architect ]
+      to: [fortiEnterpriceFirewall,fortinetNSE7LANEdgeExamDetails,fortinetFCSSLANEdge76Architect,fortinetFCSSNetworkSecurity76Support,fortinetFCSSSDWAN76Architect ]
     },
     {
       title: "Fortinet Secure Access Service Edge",
@@ -130,18 +143,16 @@ const FortinetTraining = () => {
 
       <Helmet>
     
-        <meta
-          name="description"
-          content=" fortinet certified professional ,fortinet solutions specialist, expert Fortinet training and cybersecurity certification courses. Learn FortiGate firewall, network defense, and security skills."
+        <meta name="description"
+          content="fortinet certified professional ,fortinet solutions specialist, expert Fortinet training and cybersecurity certification courses. Learn FortiGate firewall, network defense, and security skills."
         />
-        <meta
-          name="keywords"
+        <meta name="keywords"
           content="fortinet certified professional,fortinet solutions specialist,llttechsolutions, Fortinet courses online, FortiGate Firewall, Network Security, LLT Tech Solutions,FTI,Fortinet training courses,fortinet,fti,LLTtech,"
         />
         <link rel="canonical" href="https://llttechsolutions.com/" />
-  </Helmet>
+      </Helmet>
     
-    <div className="min-h-screen bg-gray-50">
+       <div className="min-h-screen bg-gray-50">
  
       
       {/* Hero Section */}
@@ -163,9 +174,6 @@ const FortinetTraining = () => {
                   Start Free Demo
                 </button>
                      </Link>
-                {/* <button className="border-2 border-white hover:bg-white hover:text-blue-900 text-white px-8 py-3 rounded-lg font-semibold">
-                  Download Syllabus
-                </button> */}
               </div>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8">
@@ -203,7 +211,7 @@ const FortinetTraining = () => {
       </section>
 
       {/* Course Content */}
-      <section className="py-16 bg-gray-100">
+      <section id="certified-professional" className="py-16 bg-gray-100">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4"> FORTINET CERTIFIED 
@@ -239,7 +247,7 @@ PROFESSIONAL</h2>
 
 
    {/* Course Content */}
-      <section className="py-16 bg-gray-100">
+      <section id="solution-specialist" className="py-16 bg-gray-100">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4"> FORTINET SOLUTION SPECIALIST</h2>
@@ -273,7 +281,7 @@ PROFESSIONAL</h2>
 
 
  {/* Course Content */}
-      <section className="py-16 bg-gray-100">
+      <section id="expert-security" className="py-16 bg-gray-100">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4"> Fortinet Certified Expert Cybersecurity</h2>

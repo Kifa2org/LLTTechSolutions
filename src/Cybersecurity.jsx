@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import CyberBg from "./assets/CyberBackground.jpg"
+import CyberBg from "./assets/CyberBackground.webp"
 import AnimatedServiceCard from './components/AnimatedServiceCard';
 
 const cardVariants = {

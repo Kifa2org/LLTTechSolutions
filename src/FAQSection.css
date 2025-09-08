@@ -1,0 +1,43 @@
+.glassmorphism {
+          background: rgba(31, 41, 55, 0.95);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(75, 85, 99, 0.3);
+        }
+
+        .faq-item {
+          transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 10px 30px rgba(75, 85, 99, 0.2);
+        }
+
+        .faq-content {
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease-out;
+        }
+
+        .faq-content.active {
+          max-height: 200px;
+        }
+
+        .rotate-icon {
+          transition: transform 0.3s ease;
+        }
+
+        .rotate-icon.active {
+          transform: rotate(180deg);
+        }
+
+        .gradient-border {
+          background: linear-gradient(45deg, #111827, #1f2937);
+          padding: 2px;
+          border-radius: 12px;
+        }
+
+        .gradient-border-inner {
+          background: rgba(31, 41, 55, 0.95);
+          border-radius: 10px;
+        }

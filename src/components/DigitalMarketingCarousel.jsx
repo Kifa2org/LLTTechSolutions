@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import Digitalmarketing from "../assets/Digitalmarketing.jpg";
+import Digitalmarketing from "../assets/Digitalmarketing.webp";
 
 const slides = [
   {

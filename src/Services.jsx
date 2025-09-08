@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import ServicesImg from './assets/switching.jpg';
+import ServicesImg from './assets/switching.webp';
 
 const Services = () => {
   return (

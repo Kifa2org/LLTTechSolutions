@@ -1,0 +1,13 @@
+User-agent: *
+User-agent: Yandex
+Allow: /
+Allow: /company
+Allow: /search/about
+Allow: /LLtTech
+Allow: /search/CyberSecurity
+Allow: /search/Fortinet
+Allow: /Fortinet
+Allow: /FortinetTraining
+Allow: /FortiNACExam
+
+Disallow:

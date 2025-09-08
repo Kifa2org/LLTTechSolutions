@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import MinBg from "../assets/mainpageImg.jpg";
+import MinBg from "../assets/mainpageImg.webp";
 
 
 const NewHero = () => {

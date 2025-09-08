@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import FullStackimg from "../assets/FullStackimg.jpg";
+import FullStackimg from "../assets/FullStackimg.webp";
 
 const slides = [
   {

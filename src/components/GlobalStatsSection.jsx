@@ -28,7 +28,6 @@ const GlobalStatsSection = () => {
       />
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <p className="text-green-500 text-sm font-semibold">LLTTechSolutions LABS</p>
         <h2 className="text-3xl sm:text-4xl font-bold mt-2 mb-8">
           Global Threat Protection Delivered Daily
         </h2>
@@ -47,10 +46,6 @@ const GlobalStatsSection = () => {
             </div>
           ))}
         </div>
-
-        <button className="mt-10 px-6 py-3 bg-green-600 hover:bg-green-700 transition text-white rounded-full font-semibold">
-          EXPLORE THREAT RESEARCH
-        </button>
       </div>
     </div>
   );

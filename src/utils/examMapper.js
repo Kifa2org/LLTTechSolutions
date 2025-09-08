@@ -30,6 +30,21 @@ import fortinetFCSSFortiSASE25Administrator from '../data/fortinetFCSSFortiSASE2
 import fortinetFCSSPublicCloudSecurity76Architect from '../data/fortinetFCSSPublicCloudSecurity76Architect';
 import fortinetNSE8NetworkSecurityExpert8 from '../data/fortinetNSE8NetworkSecurityExpert8';
 import fortinetNSE8PracticalExam from '../data/fortinetNSE8PracticalExam';
+import ciscoCCNA from '../data/ciscoCCNA';
+import ciscoSNCF from '../data/ciscoSNCF';
+import ciscoSCOR from '../data/ciscoSCOR';
+import ciscoCCIE from '../data/ciscoCCIE';
+import checkpointCCSA from '../data/checkpointCCSA';
+import checkpointCCSE from '../data/checkpointCCSE';
+import checkpointCCSM from '../data/checkpointCCSM';
+import informationSecurityHacking from '../data/informationSecurityHacking';
+import networkFundamentals from '../data/networkFundamentals';
+import advanceNetworking from '../data/advanceNetworking';
+import cloudSecurity from '../data/cloudSecurity';
+import networkExploitation from '../data/networkExploitation';
+import securityAuditing from '../data/securityAuditing';
+import networkArchitecture from '../data/networkArchitecture';
+import webApplicationSecurity from '../data/webApplicationSecurity';
 
 const examMapping = {
   'FCP_FGT_AD-7.6': examDetails,
@@ -62,7 +77,22 @@ const examMapping = {
   'FCSS_SASE_AD-25': fortinetFCSSFortiSASE25Administrator,
   'FCSS_CDS_AR-7.6': fortinetFCSSPublicCloudSecurity76Architect,
   'NSE8_WRT': fortinetNSE8NetworkSecurityExpert8,
-  'NSE8_PRAC': fortinetNSE8PracticalExam
+  'NSE8_PRAC': fortinetNSE8PracticalExam,
+  'CCNA': ciscoCCNA,
+  'SNCF': ciscoSNCF,
+  'SCOR': ciscoSCOR,
+  'CCIE': ciscoCCIE,
+  'CCSA': checkpointCCSA,
+  'CCSE': checkpointCCSE,
+  'CCSM': checkpointCCSM,
+  'informationSecurityHacking': informationSecurityHacking,
+  'networkFundamentals': networkFundamentals,
+  'advanceNetworking': advanceNetworking,
+  'cloudSecurity': cloudSecurity,
+  'networkExploitation': networkExploitation,
+  'securityAuditing': securityAuditing,
+  'networkArchitecture': networkArchitecture,
+  'webApplicationSecurity': webApplicationSecurity
 };
 
 export const getExamDetailsByCode = (examCode) => {

@@ -1,10 +1,12 @@
 import React,{useState} from 'react';
 import { motion , AnimatePresence } from 'framer-motion';
+import emailjs from '@emailjs/browser';
 
-const Contact = () => {
+  const Contact = () => {
 
   const data ={
     name:"",
+    phone:"",
     email:'',
     subject:'',
     message:''
@@ -12,65 +14,43 @@ const Contact = () => {
 
   const [mydata,setmydata]=useState(data);
 
-  const handile =(e,name)=>{
-let dataval = e.target.value || "";
-let strname = name;
-setmydata({...mydata,[strname]:dataval})
-}
+  const handle =(e,name)=> {
+    let dataval = e.target.value || "";
+    let strname = name;
+    setmydata({...mydata,[strname]:dataval})
+  }
   const [status, setStatus] = useState(false);
-const handilesub = (e)=>{
-  e.preventDefault();
-// const formData = new FormData(mydata);
 
-fetch("http://localhost/EmailBackend/ZEmailSend.php", {
-  method: "POST",
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify(mydata)
-})
-.then(response => {
-  console.log(response);
-  
-  // Check if the response is successful and has a JSON content type
-  const contentType = response.headers.get('content-type');
-  if (!response.ok) {
-    // If the response is not ok, parse the text to see the error message
-    return response.text().then(text => {
-      throw new Error(`Server error: ${response.status} - ${text}`);
-    });
-  }
-  
-  if (contentType && contentType.includes('application/json')) {
-    return response.json();
-  } else {
-    // If the response is not JSON, parse it as text and handle it
-    return response.text().then(text => {
-      console.warn("Received non-JSON response:", text);
-      return {}; // Return an empty object or handle as needed
-    });
-  }
-})
-.then(data => {
-  console.log("Success:", data);
-})
-.catch(error => {
-  // This will catch network errors or errors thrown in the .then() block
-  console.error("Fetch error:", error);
-});
-  
+  const handleSubmit = (e) => {
+        e.preventDefault();
 
-setmydata(data)
- setStatus(true);
+        // Your EmailJS service ID, template ID, and Public Key
+        const serviceId = 'service_zjrr0bn';
+        const templateId = 'template_hbj3r2b';
+        const publicKey = 'V2VbEXWAcnrUQLNJj';
 
-    // reset after some time
-    setTimeout(() => setStatus(false), 2500);
-  console.log(mydata);
-  
+        // Create a new object that contains dynamic template params
+        const templateParams = {
+          name: mydata.name,
+          email: mydata.email,
+          phone: mydata.phone,
+          message: mydata.message,
+          subject: mydata.subject,
+        };
 
-}
+        // Send the email using EmailJS
+        emailjs.send(serviceId, templateId, templateParams, publicKey)
+          .then((response) => {
+            console.log('Email sent successfully!', response);
 
-  
+            setmydata(data)
+            setStatus(true);
+            setTimeout(() => setStatus(false), 2500);
+          })
+          .catch((error) => {
+            console.error('Error sending email:', error);
+          });
+      }
 
   return (
   <>
@@ -95,7 +75,7 @@ setmydata(data)
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-8 shadow-2xl"
-           onSubmit={handilesub}
+           onSubmit={handleSubmit}
         >
           <div className="mb-6">
             <label className="block text-gray-200 text-sm font-semibold mb-3" htmlFor="name">
@@ -107,9 +87,25 @@ setmydata(data)
               placeholder="Enter your full name"
               className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all duration-300"
               required
-              onChange={(e)=>handile(e,'name')}
+              onChange={(e)=>handle(e,'name')}
 
               value={mydata.name}
+            />
+          </div>
+
+          <div className="mb-6">
+            <label className="block text-gray-200 text-sm font-semibold mb-3" htmlFor="phone">
+              Phone Number
+            </label>
+            <input
+              id="phone"
+              type="text"
+              placeholder="Enter your phone number"
+              className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all duration-300"
+              required
+              onChange={(e)=>handle(e,'phone')}
+
+              value={mydata.phone}
             />
           </div>
 
@@ -123,7 +119,7 @@ setmydata(data)
               placeholder="Enter your email address"
               className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all duration-300"
               required
-              onChange={(e)=>handile(e,'email')}
+              onChange={(e)=>handle(e,'email')}
               value={mydata.email}
             />
           </div>
@@ -138,7 +134,7 @@ setmydata(data)
               placeholder="What's this about?"
               className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all duration-300"
               required
-              onChange={(e)=>handile(e,'subject')}
+              onChange={(e)=>handle(e,'subject')}
               value={mydata.subject}
             />
           </div>
@@ -153,7 +149,7 @@ setmydata(data)
               rows="5"
               className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all duration-300 resize-none"
               required
-              onChange={(e)=>handile(e,'message')}
+              onChange={(e)=>handle(e,'message')}
               value={mydata.message}
             ></textarea>
           </div>
@@ -186,16 +182,24 @@ setmydata(data)
           <div className="grid grid-cols-1  md:grid-cols-3 gap-6 text-gray-300">
             <div className="bg-gray-800/30 hover:bg-gray-600 backdrop-blur-sm border border-gray-700 rounded-lg p-4">
               <h3 className="font-semibold text-white mb-2">Email Us</h3>
-              <p className="text-sm">contact@llttechsolutions.com</p>
+                 <a href="mailto:contact@llttechsolutions.com"
+                    className="hover:text-white transition-colors"
+                 >
+                    contact@llttechsolutions.com
+                 </a>
             </div>
             <div className="bg-gray-800/30 hover:bg-gray-600 backdrop-blur-sm border border-gray-700 rounded-lg p-4">
               <h3 className="font-semibold text-white mb-2">Call Us</h3>
-              <p className="text-sm">+91 78458 25295</p>
+              <a href="tel:+917845825295"
+                 className="hover:text-white transition-colors cursor-pointer">
+                 +91 78458 25295
+              </a>
             </div>
             <div className="bg-gray-800/30 hover:bg-gray-600 backdrop-blur-sm border border-gray-700 rounded-lg p-4">
               <h3 className="font-semibold text-white mb-2">Visit Us</h3>
               <p className="text-sm"> Palakkad Main Road,Sunnambu,Kalavai
-          Kuniyamuthur, Coimbatore-641008, Tamil Nadu</p>
+                 Kuniyamuthur, Coimbatore-641008, Tamil Nadu
+              </p>
              
             </div>
           </div>

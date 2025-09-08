@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import FullStackimg from "../assets/FullStackimg.jpg";
+import FullStackimg from "../assets/FullStackimg.webp";
 
 const FullStack = () => {
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import Digitalmarketing from "../assets/Digitalmarketing.jpg";
+import Digitalmarketing from "../assets/Digitalmarketing.webp";
 
 
 const DigitalMarket = () => {
