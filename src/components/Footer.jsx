@@ -242,7 +242,13 @@ const Footer = () => {
                   <a href="/training">Cybersecurity</a>
                </li>
                <li className="hover:text-red-600 cursor-pointer">
+                 <a href="https://datacenter.llttechsolutions.com/">Datacenter Engineering</a>
+               </li>
+               <li className="hover:text-red-600 cursor-pointer">
                  <a href="https://digitalmarketing.llttechsolutions.com/">Digital Marketing</a>
+               </li>
+               <li className="hover:text-red-600 cursor-pointer">
+                 <a href="https://software.llttechsolutions.com/">Software Development</a>
                </li>
               </ul>
             </div>
